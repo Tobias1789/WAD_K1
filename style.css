@@ -22,24 +22,38 @@ header {
 
 header nav { display: flex; }               /* descendant selector */
 
-nav a {
+nav a,
+.login-link,
+.logout-link {
   padding: 14px 16px;
   color: #000;
   text-decoration: none;
 }
 
-nav a:hover {                                /* pseudo-class */
+nav a:hover,                                 /* pseudo-class */
+.login-link:hover,
+.logout-link:hover {
   background: #1f497d;
   color: #fff;
 }
 
 .avatar {
+  display: inline-block;                     /* keeps the circle sized when nested */
   width: 36px;
   height: 36px;
   border-radius: 50%;
   background: #888;
   border: 3px solid #eee;
 }
+
+.account { display: flex; align-items: center; }
+
+.login-link .avatar { display: none; }          /* signed out: no picture */
+.logout-link { display: none; }                  /* signed out: no Logout */
+
+header:target .login-text { display: none; }     /* signed in: no "Login" */
+header:target .login-link .avatar { display: inline-block; }
+header:target .logout-link { display: inline; }
 
 /* ---------- Main layout ---------- */
 main {

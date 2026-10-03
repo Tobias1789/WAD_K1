@@ -7,12 +7,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <header id="logged-in">
     <nav>
       <a href="index.html">Home</a>
       <a href="addPost.html">Add Post</a>
     </nav>
-    <a href="login.html" class="avatar" aria-label="Login"></a>
+    <div class="account">
+      <a href="login.html" class="login-link">
+        <span class="login-text">Login</span>
+        <img class="avatar" src="avatar.svg" alt="Your profile">
+      </a>
+      <a href="#logout" class="logout-link">Logout</a>
+    </div>
   </header>
 
   <main class="center">
@@ -31,6 +37,6 @@
     </section>
   </main>
 
-  <footer>Footer</footer>
+  <footer>PostIt</footer>
 </body>
 </html>
