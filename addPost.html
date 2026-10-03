@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PostIt - Add Post</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="addPost.html">Add Post</a>
+    </nav>
+    <a href="login.html" class="avatar" aria-label="Login"></a>
+  </header>
+
+  <main class="center">
+    <section class="card">
+      <form action="index.html">
+        <div class="row">
+          <label for="body">Post body</label>
+          <textarea id="body" name="body" placeholder="textarea"></textarea>
+        </div>
+        <div class="row">
+          <label for="file">Select file</label>
+          <input type="file" id="file" name="file">
+        </div>
+        <button class="primary" type="submit">Create post</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>Footer</footer>
+</body>
+</html>

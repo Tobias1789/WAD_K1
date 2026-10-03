@@ -1,0 +1,166 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Courier New", monospace;
+  background: #fff;
+}
+
+/* ---------- Header / navigation ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #c0c0c0;
+  margin: 10px;
+  border-radius: 8px;
+  padding: 0 10px;
+}
+
+header nav { display: flex; }               /* descendant selector */
+
+nav a {
+  padding: 14px 16px;
+  color: #000;
+  text-decoration: none;
+}
+
+nav a:hover {                                /* pseudo-class */
+  background: #1f497d;
+  color: #fff;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #888;
+  border: 3px solid #eee;
+}
+
+/* ---------- Main layout ---------- */
+main {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  margin: 0 10px;
+}
+
+main > aside {                               /* child selector */
+  flex: 1;
+  background: #bbb;
+  border-radius: 8px;
+}
+
+main > section.feed {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+main.center {
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 30px;
+}
+
+/* ---------- Posts ---------- */
+.feed > article {
+  background: #d9d9d9;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.post-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-info .avatar { width: 22px; height: 22px; border-width: 2px; }
+
+article img {
+  width: 100%;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+article img + p { margin-top: 8px; }         /* adjacent sibling selector */
+
+article p ~ .like { margin-top: 6px; }       /* general sibling selector */
+
+.like {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.like::before { content: "👍 "; }            /* pseudo-element */
+
+/* ---------- Forms ---------- */
+.card {
+  background: #d9d9d9;
+  border-radius: 10px;
+  padding: 24px;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.card a { color: #00a6e6; text-decoration: none; }
+
+.card form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.card .row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.card .row label { width: 70px; text-align: right; }
+.card .row textarea { flex: 1; height: 90px; }
+
+.card input[type="email"],
+.card input[type="password"] { padding: 6px; width: 70%; }
+
+button.primary {
+  background: #1f497d;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+button.primary:hover { background: #2f6bb5; }
+
+/* ---------- Footer ---------- */
+footer {
+  background: #c0c0c0;
+  text-align: center;
+  padding: 14px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+/* ---------- Phone ---------- */
+@media (max-width: 600px) {
+  main { flex-direction: column; }
+  main > aside { display: none; }
+  .card .row { flex-direction: column; }
+  .card .row label { width: auto; text-align: left; }
+}
