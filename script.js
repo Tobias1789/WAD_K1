@@ -14,7 +14,7 @@ function addPost(post) {
   const article = document.createElement("article");
   article.innerHTML = `
     <div class="post-info"><div class="author-info"><span class="avatar"></span><span>${post.author}</span></div><time datetime="${post.date}">${date}</time></div>
+    ${post.image ? `<img src="${post.image}" alt="Post image">` : ""}
     <p>${post.text}</p>
     <button class="like" type="button">Like</button>`;
-  feed.appendChild(article);
 }
