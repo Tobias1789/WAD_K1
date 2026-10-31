@@ -1,9 +1,14 @@
-const ENDPOINT = "https://api.jsonbin.io/v3/b/6ae5f8bfffd5d160539b5702";
+// const ENDPOINT = "https://api.jsonbin.io/v3/b/6ae5f8bfffd5d160539b5702";
 const feed = document.getElementById("feed");
-
-fetch(ENDPOINT)
+// Task 4: fetch from online endpoint
+// fetch(ENDPOINT)
+//  .then(res => res.json())
+//  .then(data => data.record.forEach(addPost))
+//  .catch(err => console.error("Failed to load posts:", err));
+// Task 5: fetch from local JSON file
+fetch("posts.json")
   .then(res => res.json())
-  .then(data => data.record.forEach(addPost))
+  .then(data => data.forEach(addPost))
   .catch(err => console.error("Failed to load posts:", err));
 
 function addPost(post) {
