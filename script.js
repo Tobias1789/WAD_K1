@@ -17,5 +17,5 @@ function addPost(post) {
     ${post.image ? `<img src="${post.image}" alt="Post image">` : ""}
     <p>${post.text}</p>
     <button class="like" type="button">Like</button>`;
-    feed.appendChild(article);
+  feed.appendChild(article);
 }
