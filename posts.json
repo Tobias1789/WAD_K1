@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "author": "Tobias Välja",
+    "date": "2022-10-22",
+    "text": "Tartu 2022",
+    "image": "tartu.svg"
+  },
+  {
+    "id": 2,
+    "author": "Mihkel Tomson",
+    "date": "2022-10-02",
+    "text": "Anyone knows in which room is the lab today?",
+    "image": null
+  },
+  {
+    "id": 3,
+    "author": "Rasmus Vider",
+    "date": "2022-09-28",
+    "text": "Walking home after the lecture.",
+    "image": "tartu.svg"
+  },
+  {
+    "id": 4,
+    "author": "Tobias Välja",
+    "date": "2022-09-20",
+    "text": "Does anyone have notes from the last HTML lecture?",
+    "image": null
+  },
+  {
+    "id": 5,
+    "author": "Mihkel Tomson",
+    "date": "2022-09-15",
+    "text": "Found a great cafe near the university.",
+    "image": null
+  },
+  {
+    "id": 6,
+    "author": "Rasmus Vider",
+    "date": "2022-09-10",
+    "text": "Autumn colors in Toomemägi.",
+    "image": "tartu.svg"
+  },
+  {
+    "id": 7,
+    "author": "Tobias Välja",
+    "date": "2022-09-05",
+    "text": "First week of the semester done!",
+    "image": null
+  },
+  {
+    "id": 8,
+    "author": "Mihkel Tomson",
+    "date": "2022-08-30",
+    "text": "Looking for a team for the web project. Anyone interested?",
+    "image": null
+  },
+  {
+    "id": 9,
+    "author": "Rasmus Vider",
+    "date": "2022-08-25",
+    "text": "Evening by the Emajõgi river.",
+    "image": "tartu.svg"
+  },
+  {
+    "id": 10,
+    "author": "Tobias Välja",
+    "date": "2022-08-20",
+    "text": "Welcome to PostIt, my first post!",
+    "image": null
+  }
+]
