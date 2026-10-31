@@ -1,13 +1,15 @@
-const ENDPOINT = "https://api.jsonbin.io/v3/b/6ae5f8bfffd5d160539b5702;
+const ENDPOINT = "https://api.jsonbin.io/v3/b/6ae5f8bfffd5d160539b5702";
 const feed = document.getElementById("feed");
 
 fetch(ENDPOINT)
   .then(res => res.json())
-  .then(data => data.record.forEach(addPost));
+  .then(data => data.record.forEach(addPost))
+  .catch(err => console.error("Failed to load posts:", err));
 
 function addPost(post) {
-  const date = new Date(post.date).toLocaleDateString("en-US",
-    { month: "short", day: "numeric", year: "numeric" });
+  const date = new Date(post.date).toLocaleDateString("en-US", {
+    month: "short", day: "numeric", year: "numeric", timeZone: "UTC"
+  });
 
   const article = document.createElement("article");
   article.innerHTML = `
