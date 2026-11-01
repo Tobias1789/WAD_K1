@@ -179,3 +179,22 @@ footer {
   .card .row label { width: auto; text-align: left; }
 }
 .author-info { display: flex; align-items: center; gap: 8px; }
+
+/* ---------- Dropdown menu (task 7) ---------- */
+.account { position: relative; }
+
+.dropdown {
+  display: none;                             /* hidden until the photo is clicked */
+  position: absolute;
+  top: 100%;
+  right: 0;
+  flex-direction: column;
+  background: #bbb;
+  padding: 8px 16px;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+header:target .dropdown.open { display: flex; }   /* only when signed in */
+
+.dropdown a { color: #000; text-decoration: none; }
