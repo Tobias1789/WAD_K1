@@ -1,18 +1,30 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <main>
+    <aside></aside>
+    <section class="feed">
+      <PostComponent
+        v-for="post in posts"
+        :key="post.id"
+        :post="post"
+      />
+    </section>
+    <aside></aside>
+  </main>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import PostComponent from "@/components/PostComponent.vue"
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
-    HelloWorld
+    PostComponent
+  },
+  computed: {
+    // Hangib andmed otse Vuex Store'ist (Task 4.1 nõue)
+    posts() {
+      return this.$store.state.postsList
+    }
   }
 }
 </script>
