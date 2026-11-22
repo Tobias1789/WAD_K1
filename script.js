@@ -16,11 +16,43 @@ function addPost(post) {
     month: "short", day: "numeric", year: "numeric", timeZone: "UTC"
   });
 
+  // build the post with textContent (not innerHTML) so user text is never run as HTML
   const article = document.createElement("article");
-  article.innerHTML = `
-    <div class="post-info"><div class="author-info"><span class="avatar"></span><span>${post.author}</span></div><time datetime="${post.date}">${date}</time></div>
-    ${post.image ? `<img src="${post.image}" alt="Post image">` : ""}
-    <p>${post.text}</p>
-    <button class="like" type="button">Like</button>`;
+
+  const info = document.createElement("div");
+  info.className = "post-info";
+
+  const authorInfo = document.createElement("div");
+  authorInfo.className = "author-info";
+  const avatar = document.createElement("span");
+  avatar.className = "avatar";
+  const author = document.createElement("span");
+  author.textContent = post.author;
+  authorInfo.append(avatar, author);
+
+  const time = document.createElement("time");
+  time.setAttribute("datetime", post.date);
+  time.textContent = date;
+
+  info.append(authorInfo, time);
+  article.appendChild(info);
+
+  if (post.image) {
+    const img = document.createElement("img");
+    img.src = post.image;
+    img.alt = "Post image";
+    article.appendChild(img);
+  }
+
+  const text = document.createElement("p");
+  text.textContent = post.text;
+  article.appendChild(text);
+
+  const like = document.createElement("button");
+  like.className = "like";
+  like.type = "button";
+  like.textContent = "Like";
+  article.appendChild(like);
+
   feed.appendChild(article);
 }

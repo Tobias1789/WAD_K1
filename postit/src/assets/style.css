@@ -215,6 +215,12 @@ button.primary {
   transition: background-color 160ms ease;
 }
 
+.error {
+  color: #e88a8a;
+  margin: 0;
+  text-align: center;
+}
+
 button.primary:hover { background: var(--accent-hover); }
 
 /* ---------- Footer ---------- */
