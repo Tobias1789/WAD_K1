@@ -22,6 +22,12 @@ body {
   color: var(--text);
 }
 
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 /* ---------- Header / navigation ---------- */
 header {
   display: flex;
@@ -77,7 +83,7 @@ main {
   flex: 1;
   display: flex;
   gap: 10px;
-  margin: 0 10px;
+  margin: 0 10px 10px;
 }
 
 main > aside {                               /* child selector */
@@ -96,7 +102,7 @@ main > section.feed {
 
 main.center {
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding-top: 30px;
 }
 
@@ -172,16 +178,25 @@ article p ~ .like { margin-top: 6px; }       /* general sibling selector */
   display: flex;
   gap: 10px;
   width: 100%;
-  align-items: flex-start;
+  align-items: center;
 }
 
-.card .row label { width: 70px; text-align: right; }
-.card .row textarea { flex: 1; height: 90px; }
+.card .row label {
+   width: 90px; 
+   text-align: right; 
+   flex-shrink: 0;
+  }
+
+.card .row textarea { 
+  flex: 1; 
+  height: 90px; 
+}
 
 .card input[type="email"],
 .card input[type="password"] {
   padding: 8px;
-  width: 70%;
+  flex: 1;
+  min-width: 0;
   background: #25272b;
   color: var(--text);
   border: 1px solid #4a4e56;
@@ -231,6 +246,7 @@ footer {
   text-align: center;
   padding: 14px;
   margin: 10px;
+  margin-top: auto;
   border-radius: 8px;
   box-shadow: var(--shadow);
 }

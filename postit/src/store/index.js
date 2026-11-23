@@ -86,7 +86,19 @@ export default createStore({
     ]
   },
   getters: {},
-  mutations: {},
-  actions: {},
+mutations: {
+  INCREMENT_LIKES(state, postId) {
+    const post = state.postsList.find(p => p.id === postId)
+    if (post) {
+      post.likes++
+    }
+  },
+  RESET_LIKES(state) {
+    state.postsList.forEach(post => {
+      post.likes = 0
+    })
+  }
+},
+actions: {},
   modules: {}
 })
